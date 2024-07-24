@@ -5,7 +5,7 @@ import CarouselCard from './CarouselCard';
 
 const CarouselSec = () => {
     return (
-        <Carousel autoPlay={true} infiniteLoop={true} swipeable={true}>
+        <Carousel autoPlay={true} infiniteLoop={true} swipeable={true} showThumbs={false} showArrows={false} className='mb-10'>
             <CarouselCard/>
             <CarouselCard/>
             <CarouselCard/>

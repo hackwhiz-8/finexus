@@ -1,16 +1,16 @@
 import React from 'react'
 import './FooterC.css';
-import Logo from '../../assests/images/financial-planning-concept-illustration.png'
+import image from '../../assests/images/IMG_20240720_171146.png'
 
 const Footer = () => {
     return (
-        <footer className="footer bg-gray-900" >
+        <footer className="footer bg-black grid grid-cols-3" >
 
-            <div className="footer-section">
-                <img src={Logo} alt="Logo" className="w-[100px]" />
-                <p>&copy; 2023 My Company</p>
+            <div className="footer-section flex flex-col items-center">
+                <img src={image} alt="Logo" className="w-[100px]"  />
+                <p className='text-left'>&copy; 2024 My Company</p>
             </div>
-            <div className='grid grid-cols-2 gap-10 mt-7'>
+            <div className='grid grid-cols-2 gap-20 mt-7'>
                 <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
