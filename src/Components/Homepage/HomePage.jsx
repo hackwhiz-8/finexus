@@ -17,7 +17,7 @@ const HomePage = () => {
              <FinancialCalc/>
              <OutPartners/>
              <AboutUs/>
-             <Footer/>
+             
         </div>
     )
 }

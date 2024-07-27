@@ -5,6 +5,7 @@ import { loanTypes } from '../../data/BanksLinks'
 
 const ContactForm = () => {
     const [loading, setLoading] = useState(false)
+    const [date, setdate] = useState('');
     const {
         register,
         handleSubmit,
@@ -188,28 +189,28 @@ const ContactForm = () => {
                         Loan Amount required
                     </label>
                     <select
-                                type="text"
-                                name="phonenumberCode"
-                                id="phonenumberCode"
-                                placeholder="Enter first name"
-                                className="form-style bg-transparent bg-opacity-50 backdrop-blur-lg p-2 border-2 rounded-md border-gray-800"
-                                {...register("LoanType", { required: true })}
-                            >
-                                {loanTypes.map((ele, i) => {
-                                    return (
-                                        <option key={i} value={ele.code} className="bg-black">
-                                            {ele.type}
-                                        </option>
-                                    )
-                                })}
-                            </select>
-                    {errors.firstname && (
+                        type="text"
+                        name="phonenumberCode"
+                        id="phonenumberCode"
+                        placeholder="Enter first name"
+                        className="form-style bg-transparent bg-opacity-50 backdrop-blur-lg p-2 border-2 rounded-md border-gray-800"
+                        {...register("LoanType", { required: true })}
+                    >
+                        {loanTypes.map((ele, i) => {
+                            return (
+                                <option key={i} value={ele.code} className="bg-black">
+                                    {ele.type}
+                                </option>
+                            )
+                        })}
+                    </select>
+                    {errors.LoanAmount && (
                         <span className="-mt-1 text-[12px] text-yellow-100">
                             Please enter Loan Amount.
                         </span>
                     )}
                 </div>
-
+               
                 <button
                     disabled={loading}
                     type="submit"
