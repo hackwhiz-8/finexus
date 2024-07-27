@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import image from '../../assests/images/IMG_20240720_171146.png'
-import { loanTypes } from '../../data/BanksLinks'
 import { contactDetails } from '../../data/BanksLinks'
 
 import * as Icon1 from "react-icons/bi"
@@ -15,69 +14,6 @@ import ContactForm from './ContactForm'
 
 
 const Contact = () => {
-    const [name, setname] = useState('')
-    const [lastName, setlastName] = useState('')
-    const [mobile, setMObile] = useState(0)
-    const [email, setemail] = useState('')
-    const [city, setCity] = useState('')
-    const [LoanAmount, setAmount] = useState(0)
-    const [income, setincome] = useState(0)
-    const [loanType, setLoanType] = useState('')
-    const [isSuccess, setIsSuccess] = useState(false)
-
-    const resetForm = () => {
-        setname('');
-        setlastName('');
-        setemail('');
-        setMObile(0);
-        setAmount(0);
-        setLoanType('');
-        setincome(0);
-
-    }
-
-    const handleSubmit = (e) => {
-        // Sort results by id in descending order, take two
-        // and return the age as an integer.
-
-
-        fetch('https://sheetdb.io/api/v1/xppj1l451nj3t', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                data: [
-                    {
-
-                        Name: name,
-                        lastname: lastName,
-                        email: email,
-                        Mobile: mobile,
-                        LoanAmount: LoanAmount,
-                        LoanType: loanType,
-                        city: city,
-                        income: income
-                    }
-                ]
-            })
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                alert("Lead Generated successfully")
-                console.log(data)
-            })
-        setIsSuccess(true);
-    }
-
-    useEffect(() => {
-        if (isSuccess) {
-            resetForm();
-            setIsSuccess(false)
-        }
-    }, [isSuccess])
-
 
     return (
         <div className='w-full lg:h-[630px]  '>

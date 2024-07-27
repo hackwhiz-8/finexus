@@ -5,7 +5,6 @@ import Services from './Services'
 import FinancialCalc from './FinancialCalcSec'
 import OutPartners from './OutPartners'
 import AboutUs from './AboutUs'
-import Footer from '../Footer/Footer'
 
 const HomePage = () => {
     return (

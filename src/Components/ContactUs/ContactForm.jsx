@@ -1,11 +1,10 @@
 import CountryCode from "../../data/countrycode.json"
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { loanTypes } from '../../data/BanksLinks'
 
 const ContactForm = () => {
-    const [loading, setLoading] = useState(false)
-    const [date, setdate] = useState('');
+
     const {
         register,
         handleSubmit,
@@ -212,12 +211,10 @@ const ContactForm = () => {
                 </div>
                
                 <button
-                    disabled={loading}
+                    
                     type="submit"
                     className={`rounded-md bg-blue-400 px-6 py-3 text-center text-[13px] font-bold text-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)] 
-                         ${!loading &&
-                        "transition-all duration-200 hover:scale-95 hover:shadow-none"
-                        }  disabled:bg-richblack-500 sm:text-[16px] `}
+                          disabled:bg-richblack-500 sm:text-[16px] `}
                 >
                     Send Message
                 </button>
